@@ -14,13 +14,13 @@
 	\u 转义
 
   
-  ##### Blocks 编码组
+    Blocks 编码组
 
-    0 ~ U+007F：常用拉丁字符
-    String.fromCharCode(num)
-    U+4E00 ~ U+9FFF：CJK ChineseJapaneseKorean三合一
-    有一些增补区域（extension）
-    U+0000 - U+FFFF：BMP 基本平面
+	    0 ~ U+007F：常用拉丁字符
+	    String.fromCharCode(num)
+	    U+4E00 ~ U+9FFF：CJK ChineseJapaneseKorean三合一
+	    有一些增补区域（extension）
+	    U+0000 - U+FFFF：BMP 基本平面
   
   
 #### InputElement
