@@ -69,6 +69,9 @@ NumericLiteral ::
         HexDigit :: one of
             0 1 2 3 4 5 6 7 8 9 a b c d e f A B C D E F
 ```
+##### 代码
+```
+```
 #### 2. 写一个 UTF-8 Encoding 的函数 (输入汉字输出字符串编码，输入“测试”，输出“\u6d4b\u8bd5”)
 
 ```
@@ -128,3 +131,4 @@ NumericLiteral ::
     Hex4Digits ::
         HexDigit HexDigit HexDigit HexDigit
 ```
+##### 代码
