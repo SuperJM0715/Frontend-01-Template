@@ -13,6 +13,7 @@
 	平时写代码时，最好使用 ASCII 中的字符
 	\u 转义
  	
+	extensions
 	    0 ~ U+007F：常用拉丁字符
 	    String.fromCharCode(num)
 	    U+4E00 ~ U+9FFF：CJK 
