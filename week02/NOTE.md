@@ -1,26 +1,23 @@
 #### unicode
-	 https://www.fileformat.info/info/unicode/
-	 https://home.unicode.org
+	https://www.fileformat.info/info/unicode/
+	https://home.unicode.org
 	主要是与 ASCII 码兼容的Basic Latin
 	字符
 		LF
 		SPACE
-	CJK (中日韩) 
+	CJK (中日韩) U+4E00 ~ U+9FFF
     Unicode 中文字符，可用 String.fromCharCode(num) '\t'.codePointAt() 进行打印
     不要用中文做变量名, 一定要用，写成 unicode 的形式
     "中".codePointAt(0).toString(16)
 	BMP 基本字符
 	平时写代码时，最好使用 ASCII 中的字符
 	\u 转义
-
-  
-    Blocks 编码组
-
+ 	
 	    0 ~ U+007F：常用拉丁字符
 	    String.fromCharCode(num)
-	    U+4E00 ~ U+9FFF：CJK ChineseJapaneseKorean三合一
+	    U+4E00 ~ U+9FFF：CJK 
 	    有一些增补区域（extension）
-	    U+0000 - U+FFFF：BMP 基本平面
+	    U+0000 - U+FFFF：BMP
   
   
 #### InputElement
