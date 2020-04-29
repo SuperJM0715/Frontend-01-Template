@@ -110,5 +110,6 @@
 	总结 JS 中所有的特殊对象, 以 Array 为例
 ![](https://user-gold-cdn.xitu.io/2020/4/29/171c3dece3cd016a?w=646&h=462&f=png&s=145206)
 	
-	convert string to utf-8
+	convert Chinese Character to utf-8
 ![](https://user-gold-cdn.xitu.io/2020/4/29/171c3e49c822b9e5)
+![](https://user-gold-cdn.xitu.io/2020/4/29/171c3ff898edda8a?w=1310&h=342&
