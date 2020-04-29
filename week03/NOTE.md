@@ -54,7 +54,7 @@
 			yield *g 或者 数组（有 iterator 内置方法的对象）
 
 	消费 穿透
-![](https://user-gold-cdn.xitu.io/2020/4/29/	
+![](https://user-gold-cdn.xitu.io/2020/4/29/171c400d6803fd0e?w=840&h=463&f=png&s=78414)	
 	
 	错误的模仿语言的示范
 ![](https://user-gold-cdn.xitu.io/2020/4/28/171c0cf7317c1c9e?w=376&h=495&f=png&s=100719)
@@ -110,8 +110,11 @@
 	getOwwnPropertyDescriptor    
 	setPrototypeOf
 	总结 JS 中所有的特殊对象, 以 Array 为例
+	
 ![](https://user-gold-cdn.xitu.io/2020/4/29/171c3dece3cd016a?w=646&h=462&f=png&s=145206)
 	
 	convert Chinese Character to utf-8
+	
 ![](https://user-gold-cdn.xitu.io/2020/4/29/171c3e49c822b9e5)
-![](https://user-gold-cdn.xitu.io/2020/4/29/171c3ff898edda8a?w=1310&h=342&
+
+![](https://user-gold-cdn.xitu.io/2020/4/29/171c3ff898edda8a?w=1310&h=342&f=png&s=56137)
