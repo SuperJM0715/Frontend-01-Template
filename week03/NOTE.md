@@ -53,11 +53,13 @@
 	for of  遍历 value   （访问可迭代的对象  iterator 机制）
 			yield *g 或者 数组（有 iterator 内置方法的对象）
 
-	消费 穿透		
+	消费 穿透
+![](https://user-gold-cdn.xitu.io/2020/4/29/	
 	
+	错误的模仿语言的示范
 ![](https://user-gold-cdn.xitu.io/2020/4/28/171c0cf7317c1c9e?w=376&h=495&f=png&s=100719)
 
-	错误的模仿语言的示范
+	
 		function Cls(){
 		    public:
 			this.a = 1;
