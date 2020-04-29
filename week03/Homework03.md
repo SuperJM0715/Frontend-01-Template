@@ -1,4 +1,4 @@
-### 1. string to number
+### 1. convert string to number
 ```
 function convertStringToNumber(string, x){
         // 二 四 八 十六  小数  e
@@ -34,21 +34,20 @@ function convertStringToNumber(string, x){
     convertStringToNumber("10.02");
 ```
 
-### 2. number to string
+### 2. convert number to string
 ```
     // 小数（考虑无限循环）     指数
     function convertNumberToString(number, x){
         var integer = Math.floor(number);
-        var fraction = number - integer;
+        var fraction = String(number).match(/\.\d+$/);
+        fraction && fraction = fraction[0].replace('.','');
         var string = '';
         while(integer > 0){
             string = String(integer % x) + string;
-            integer = Math.floor( integer / x);
+            integer = Math.floor( Number(integer / x));
         }
-        return string;
+        return fraction ? `${string}.${fraction}` : string;
     }
-
-    convertNumberToString(34.54);
 ```
 
 ### 3. find special objects in JavaScript
