@@ -45,8 +45,6 @@ class ResponseParser{
             if(char === '\r'){ // 接收到 \r 代表结束，该改变状态了
 
                 this.currentStatus = this.WAITING_STATUS_LINE_END;
-            }else if(char === '\n'){ // 接收到 \n 代表结束，该改变状态了
-                this.currentStatus = this.WAITING_HEADER_NAME;
             }else{
                 this.statusLine += char;
             }
@@ -133,7 +131,7 @@ class TrunkedBodyParser{
             if(char === '\r'){
                 this.currentStatus = this.WAITING_NEW_LINE_END;
             }
-        }else if(this.currentStatus === this.WAITING_NEW_LINE){ //等待statusLine
+        }else if(this.currentStatus === this.WAITING_NEW_LINE_END){ //等待statusLine
             if(char === '\n'){
                 this.currentStatus = this.WAITING_LENGTH;
             }
@@ -164,7 +162,7 @@ class TrunkedBodyParser{
         }
         toString(){
                 return `${this.method} ${this.path} HTTP/1.1\r
-${Object.keys(this.headers).map(key=> `${key}: ${this.headers[key]}`)}.join("&")
+${Object.keys(this.headers).map(key=> `${key}: ${this.headers[key]}`).join("\r\n")}\r
 \r
 ${this.bodyText}`
             }
@@ -184,7 +182,7 @@ ${this.bodyText}`
                         parser.receive(data.toString());
                         // resolve(data.toString());
                         if(parser.isFinished){
-                            resolve(parser.getResponse);
+                            resolve(parser.response);
                         }
                         console.log(parser.statusLine);
                         // console.log(parser.headers);
