@@ -136,7 +136,7 @@ class ResponseParser{
         }else if(this.current === this.WAITING_HEADER_VALUE){ //
             if(char === '\r'){ // 接收到 \n 代表结束，该改变状态了
                 this.current = this.WAITING_HEADER_LINE_END;
-                this.headers[this.hederName] = this.headerValue;
+                this.headers[this.headerName] = this.headerValue;
                 this.headerName = "";
                 this.headerValue = "";
             }else{
