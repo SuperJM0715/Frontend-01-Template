@@ -233,7 +233,7 @@ function selfClosingStartTag(c){
     emit(currentToken);
     return data;
   }
-
+}
   
 function endTagOpen(c){
     if(c.match(/^[a-zA-Z]$/)){
@@ -273,5 +273,4 @@ module.exports.parseHTML = function parseHTML(html){
     }
     state = state(EOF);
     console.log(html);
-}
 }
