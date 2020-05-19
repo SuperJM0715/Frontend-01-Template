@@ -201,7 +201,7 @@ function afterAttributeName(c){
             name: "",
             value: ""
         }
-        return afterAttributeName(c);
+        return attributeName(c);
     }
 }
 
