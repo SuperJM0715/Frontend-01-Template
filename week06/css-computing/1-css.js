@@ -159,7 +159,7 @@ function beforeAttributeValue(c){
     }else if(c === "\'"){
         return singleQuotedAttributeValue;
     }else if(c === ">"){
-
+        return data;
     }else{
         return UnQuotedAttributeValue(c);
     }
