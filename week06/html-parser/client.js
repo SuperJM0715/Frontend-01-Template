@@ -42,6 +42,7 @@ ${this.bodyText}`
                 }, ()=>{
                     connection.write(this.toString())
                 });
+            }
                 connection.on('data', (data)=> {
                     parser.receive(data.toString());
                     // resolve(data.toString());
@@ -55,8 +56,7 @@ ${this.bodyText}`
                 connection.on('error', (err)=> {
                     reject(err)
                     connection.end();
-                })
-            }
+                });
         });
     }
 }
@@ -212,7 +212,7 @@ void async function(){
         port: "8088",
         path: "/",
         headers: {
-            ["X-Foo2"]: "customed"
+            ["X-Foo3"]: "customed"
         },
         body: {
             name: "inn"
@@ -220,4 +220,5 @@ void async function(){
     });
     let response = await request.send();
     let dom = parser.parseHTML(response.body);
+    console.info(dom);
 }();
