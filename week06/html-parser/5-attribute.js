@@ -184,7 +184,6 @@ function endTagOpen(c){
        return tagName(c);
     }
 }
-
 function afterAttributeName(c){
     if(c.match(/^[\t\n\f ]$/)){
         return afterAttributeName;
@@ -197,13 +196,15 @@ function afterAttributeName(c){
         emit(currentToken);
         return data;
     }else{
-        currentToken = {
-            type: "endTag",
-            tagName: ""
+        currentTextNode[currentAttribute.name] = currentAttribute.value;
+        currentAttribute = {
+            name: "",
+            value: ""
         }
-        return tagName(c);
+        return afterAttributeName(c);
     }
 }
+
 
 module.exports.parseHTML = function parseHTML(html){
     let state = data;
