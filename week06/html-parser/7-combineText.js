@@ -22,7 +22,7 @@ function emit(token){
     element.tagName = token.tagName;
 
     for(let p in token){
-        if(p !== "type" || p !== "tagName"){ // .................
+        if(p !== "type" || p !== "tagName"){
             element.attributes.push({
                 name: p,
                 value: token[p]
@@ -140,6 +140,7 @@ function attributeName(c){
         currentAttribute.name += c ;
         return attributeName;
     }
+}
 
 function beforeAttributeValue(c){
     if(c.match(/^[\t\n\f ]$/) || c === "/" || c === ">" || c === EOF){
@@ -223,7 +224,7 @@ function selfClosingStartTag(c){
     emit(currentToken);
     return data;
   }
-
+}
   
 function endTagOpen(c){
     if(c.match(/^[a-zA-Z]$/)){
@@ -252,7 +253,7 @@ function afterAttributeName(c){
             name: "",
             value: ""
         }
-        return attributeName(c);
+        return afterAttributeName(c);
     }
 }
 
@@ -264,4 +265,3 @@ module.exports.parseHTML = function parseHTML(html){
     state = state(EOF);
     console.log(html);
 }
-
