@@ -150,7 +150,7 @@ function attributeName(c){
         currentAttribute.name += c ;
         return attributeName;
     }
-
+}
 function beforeAttributeValue(c){
     if(c.match(/^[\t\n\f ]$/) || c === "/" || c === ">" || c === EOF){
         return beforeAttributeValue;
@@ -273,4 +273,5 @@ module.exports.parseHTML = function parseHTML(html){
     }
     state = state(EOF);
     console.log(html);
+}
 }
