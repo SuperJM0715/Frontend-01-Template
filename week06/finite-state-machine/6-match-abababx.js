@@ -1,54 +1,54 @@
 function match(string) {
     let state = start
-    for (let char of string) {
-      state = state(char)
+    for (let c of string) {
+      state = state(c)
     }
     return state === end
   }
-  function start(char) {
-    if (char === 'a')
+  function start(c) {
+    if (c === 'a')
       return findA1
     else
       return start
   }
-  function end() {
+  function end(c) {
     return end
   }
-  function findA1(char) {
-    if (char === 'b')
+  function findA1(c) {
+    if (c === 'b')
       return findB1
     else
-      return start(char)
+      return start(c)
   }
-  function findB1(char) {
-    if (char === 'a')
+  function findB1(c) {
+    if (c === 'a')
       return findA2
     else
-      return start(char)
+      return start(c)
   }
-  function findA2(char) {
-    if (char === 'b')
+  function findA2(c) {
+    if (c === 'b')
       return findB2
     else
-      return start(char)
+      return start(c)
   }
-  function findB2(char) {
-    if (char === 'a')
+  function findB2(c) {
+    if (c === 'a')
       return findA3
     else
-      return start(char)
+      return start(c)
   }
-  function findA3(char) {
-    if (char === 'b')
+  function findA3(c) {
+    if (c === 'b')
       return findB3
     else
-      return start(char)
+      return start(c)
   }
-  function findB3(char) {
-    if (char === 'x')
+  function findB3(c) {
+    if (c === 'x')
       return end
     else
-      return findB2(char)
+      return findB2(c)
   }
 
   
