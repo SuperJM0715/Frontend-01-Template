@@ -11,7 +11,7 @@ function match(string) {
     else
       return start
   }
-  function end(char) {
+  function end() {
     return end
   }
   function findA1(char) {
