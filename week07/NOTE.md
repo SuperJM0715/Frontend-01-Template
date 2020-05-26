@@ -30,7 +30,7 @@
     
 ## 重学CSS    
   > CSS 语法的研究
-  
+    https://naotu.baidu.com/file/6b827dd5df27fd61fcfb95a4bdd05076
     CSS 2.1 的语法
       https://www.w3.org/TR/css-syntax-3/
       https://www.w3.org/TR/CSS21/grammar.html#q25.0
@@ -65,5 +65,5 @@
   > 初建 CSS 知识体系
   
     实验收集标准
-    链接
+    https://github.com/SuperJM0715/Frontend-01-Template/blob/master/week07/css/iframe.js
     
