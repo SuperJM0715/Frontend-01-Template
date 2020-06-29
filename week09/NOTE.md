@@ -1,18 +1,37 @@
 ### Animation
-  * @keyframes
+  * @keyframes 定义
+     例子：
+       @keyframes mykf{
+        from{background: red;}
+        to{background: yellow;}
+       }
+
+       div{
+        animation: mykf 5s infinite;
+       }
+       
+       <div style="width:100px;height:100px;"></div>
   * animation
-  
-        animation-name
-        animation-duration
-        animation-timing-function
-        animation-delay
-        animation-iteration-count
-        animation-direction
+      属性
+         时间曲线 animation-name
+         动画的时长 animation-duration
+         动画的时间曲线 animation-timing-function
+         动画开始前的延迟  animation-delay
+         动画的播放次数 animation-iteration-count
+         动画的方向 animation-direction
+         
+    @keyframes mykf{
+      0% { top: 0; transition: top ease }
+      50% { top: 30px; transition:top ease-in }
+      75% { top: 10px; transition: top ease-out }
+      100% { top: 0; transition: top linear }
+    }
+    
 ### Transition
-* transition-property
-* transition-duration
-* transition-timing-function
-* transition-delay
+* 要变换的属性 transition-property
+* 变换的时长 transition-duration
+* 时间曲线 transition-timing-function
+* 延迟 transition-delay
 ### 颜色
 * CMYK：Cyan-青色，Magenta-品红，Yellow-黄色，blacK-黑色
 * RGB：Red-红色，Green-绿色，Blue-蓝色
