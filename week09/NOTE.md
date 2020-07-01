@@ -112,7 +112,13 @@
     
     推荐用 Node 不要用 element 来操作，上述的 Node 操作都有对应的 element 操作
 
-     
+     对应的 Element 操作
+    * parentElement 父节点
+    * children  子节点
+    * firstElementChild  第一个子节点
+    * lastElementChild  最后一个子节点
+    * nextElementSibling  相邻的兄弟节点
+    * previousElementSibling  前一个兄弟节点
     
 #### 修改操作
 
