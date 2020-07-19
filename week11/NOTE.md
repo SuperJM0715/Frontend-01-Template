@@ -8,3 +8,24 @@
         
       }
     ```
+function* g(){
+    yield 1;
+    yield 2;
+    yield 3;
+}
+for(v of g()){
+    console.log(v); // 1 2 3 依次输出
+}
+
+
+async function* g(){
+    let i = 0;
+    while(true){
+        await sleep(1000);
+        yield i++;
+    }
+}
+
+for await(let v of g()){
+    console.log(v)
+}
