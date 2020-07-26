@@ -4,7 +4,7 @@ function create(Cls, attributes, ...children){
     if(typeof Cls === "string"){
         o = new Wrapper(Cls);
     }else{
-        o = new Cls({
+        new Cls({
             timer: {}
         });
     }
@@ -47,8 +47,6 @@ class Wrapper{
 
     appendChild(child){
         child.mountTo(this.root);
-        // this.children.push(child);
-
     }
 
     mountTo(parent){
@@ -56,10 +54,10 @@ class Wrapper{
     }
 }
 
-class MyComponent{
+class Div{
     constructor(config){
         this.children = [];
-        // this.root = document.createElement("div");
+        this.root = document.createElement("div");
     }
 
     setAttribute(name, value){
@@ -67,33 +65,20 @@ class MyComponent{
     }
 
     appendChild(child){
-        this.children.push(child);
-    }
-
-    render(){
-        
-        return <article>
-            <header>header</header>
-            {this.slot}
-            <footer>footer</footer>
-        </article>
+        child.mountTo(this.root);
     }
 
     mountTo(parent){
-        this.slot = <div></div>
-
-        for(let child of this.children){
-            this.slot.appendChild(child);
-        }
-
-        this.render().mountTo(parent);
-
+        parent.appendChild(this.root);
     }
 }
 
-let component = <MyComponent>
-    <div>text text text</div>
-</MyComponent>
+let component = <div id="a" class="b" style="width: 100px; height: 100px; background-color: aqua;">
+    <div>中国</div>
+    <p></p>
+    <div></div>
+    <div></div>
+</div>
 
 component.mountTo(document.body);
 console.log(component);
