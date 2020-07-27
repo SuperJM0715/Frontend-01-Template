@@ -19,5 +19,3 @@
         }
 
 7. pragma: "create", 自定义函数名成， 默认 createElement
-
-8. 
