@@ -18,14 +18,45 @@ class Carousel{
     }
  
     render(){
+        let children = this.data.map(url => {
+            let element = <img src={url}/>
+            element.addEventListener("dragstart", event => event.preventDefault());
+            return element;
+        })
+        let root = <div class= "carousel">
+            { children }
+    </div>
+
+        let position = 0;
+                let nextPic = () => {
+                    let nextPosition = (position + 1) % this.data.length;
+                    let current = children[position];
+                    let next = children[nextPosition];
+
+                    // 动画要有起始位置和终止位置
+                    current.style.transition = "ease 0s";
+                    next.style.transition = "ease 0s";
+
+                    current.style.transform = `translateX(${-100 * position}%)`;
+                    next.style.transform = `translateX(${100 - 100 * nextPosition}%)`;
+
+                    // setTimeout 可以用 requsetAnimationFrame 来替换， 但是需要嵌套，见 x2_2.html
+                    setTimeout(() => {
+                        current.style.transition = "ease 0.5s";
+                        next.style.transition = "ease 0.5s";
+                        
+                        current.style.transform = `translateX(${-100 -100 * position}%)`;
+                        next.style.transform = `translateX(${-100 * nextPosition}%)`;
+                        
+                        position = nextPosition;
+                    }, 16);
+                    
+                   
+                    setTimeout(nextPic, 1000);
+                }
+                setTimeout(nextPic, 1000);
         
-        return <div class= "carousel">
-            { this.data.map( url => {
-                let element = <img src={url}/>
-                element.addEventListener("dragstart", event => event.preventDefault());
-                return element;
-            })}
-        </div>
+        return root;
     }
 
     mountTo(parent){ 
