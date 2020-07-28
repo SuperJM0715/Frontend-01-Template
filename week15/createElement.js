@@ -1,4 +1,4 @@
-export function create(Cls, attributes, ...children){
+export function createElement(Cls, attributes, ...children){
     let o;
 
     if(typeof Cls === "string"){
