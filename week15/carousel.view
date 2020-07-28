@@ -1,20 +1,24 @@
 <template>
-    
-</template>
-<script>
+    <div id="test">
+        <img />
+    </div>
+</template><script>
 export default {
-    {
-        el: '#example',
-        data: {
-            message: 'Hello'
-        },
-        computed: {
-            // 计算属性的 getter
-            reversedMessage: function () {
-            // `this` 指向 vm 实例
-            return this.message.split('').reverse().join('')
-            }
-        }
+  el: '#example',
+  data: {
+    message: 'Hello'
+  },
+  computed: {
+    // a computed getter
+    reversedMessage: function () {
+      // `this` points to the vm instance
+      let i = 1;
+      while(i < 100) {
+          i ++;
+      }
+      return this.message.split('').reverse().join('')
     }
+  }
 }
+
 </script>
