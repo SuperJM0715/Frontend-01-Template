@@ -130,14 +130,17 @@ let end = (point, context) => {
         if(isFlick){
             // console.log(speed);
             // console.log("flick");
-            element.dispatchEvent(new CustomEvent('flick', {
+            let e = new CustomEvent('flick');
+            Object.assign(e, {
                 startX: context.startX,
                 startY: context.startY,
                 clientX: point.clientX,
                 clientY: point.clientY,
                 speed: speed
-            }));
+            })
+            element.dispatchEvent(e);
         }
+        
         let e = new CustomEvent('panend');
         Object.assign(e, {
             startX: context.startX,
