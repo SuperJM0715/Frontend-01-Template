@@ -1,6 +1,7 @@
 import {createElement, Text, Wrapper} from './createElement';
 import {Timeline, Animation} from "./animation";
 import {ease} from './cubicBezier.js';
+import {enableGesture} from "./gesture";
 
 export class Carousel{
     constructor(config){
@@ -20,11 +21,7 @@ export class Carousel{
     }
  
     render(){
-
-        let root = <div class= "carousel">
-            { children }
-        </div>
-
+ 
         let timeline = new Timeline();
         timeline.start();
         let position = 0;
@@ -57,7 +54,7 @@ export class Carousel{
 
                 let currentTransformValue = - 500 * currentPosition + offset + dx;
                 let lastTransformValue = - 500 - 500 * lastPosition + offset + dx;
-                let nextTransformValue = -500 * nextPosition + offset + dx;
+                let nextTransformValue = 500 -500 * nextPosition + offset + dx;
                  
                 lastElement.style.transform = `translateX(${lastTransformValue}px)`;
                 currentElement.style.transform = `translateX(${currentTransformValue}px)`;
@@ -91,8 +88,8 @@ export class Carousel{
                     -500 * currentPosition + direction * 500, 500, 0, ease, v => `translateX(${v}px)`
                 );
                 let nextAnimation = new Animation(nextElement.style, "transform", 
-                    500 -500 * nextPosition + offset + dx,
-                    500 -500 * currentPosition + direction * 500, 0, ease, v => `translateX(${v}px)`
+                    500 - 500 * nextPosition + offset + dx,
+                    500 - 500 * currentPosition + direction * 500, 0, ease, v => `translateX(${v}px)`
                 );
 
                 timeline.add(lastAnimation);
@@ -130,7 +127,9 @@ export class Carousel{
         }
         nextPicStopHandler = setTimeout(nextPic, 1000);
         
-        return root;
+        return <div class= "carousel">
+                { children }
+               </div>;
     }
 
     mountTo(parent){ 
