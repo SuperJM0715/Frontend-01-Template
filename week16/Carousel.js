@@ -1,7 +1,6 @@
 import {createElement, Text, Wrapper} from './createElement';
 import {Timeline, Animation} from "./animation";
-import {ease} from './cubicBezier.js';
-import {enableGesture} from "./gesture";
+import {ease} from './cubicBezier.js'; 
 
 export class Carousel{
     constructor(config){
