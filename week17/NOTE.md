@@ -51,3 +51,15 @@ index.js
     ttys
     rl
 sudo npm install ttys
+
+
+
+Cursor Movement
+- Move the cursor up N lines:
+  \033[<N>A
+- Move the cursor down N lines:
+  \033[<N>B
+- Move the cursor forward N columns:
+  \033[<N>C
+- Move the cursor backward N columns:
+  \033[<N>D
