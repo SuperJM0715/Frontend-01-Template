@@ -41,5 +41,13 @@ yo winter
 
 method1 和 method2 会自动运行
 
+https://stackoverflow.com/questions/10585683/how-do-you-edit-existing-text-and-move-the-cursor-around-in-the-terminal/10830168
 
-
+mkdir console-tooltik
+cd console-tooltik
+npm init
+index.js 
+    tty
+    ttys
+    rl
+sudo npm install ttys
