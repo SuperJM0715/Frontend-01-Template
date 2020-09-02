@@ -41,7 +41,7 @@ import assert from "assert";
  tips：安装最新版的 node
 ```
 
-## 安装 nyc
+## mocha
 
 > npm install nyc
 > package.json
@@ -81,6 +81,49 @@ npm install --save-dev babel-loader @babel/core @babel/preset-env
 
 > 运行 npm run coverage, okk
 
+> mocha import
+```
+双向插件
+npm install --save-dev @istanbuljs/nyc-config-babel
+npm install --save-dev babel-plugin-istanbul
+
+.nycrc
+  "extends": "@istanbuljs/nyc-config-babel"
+
+.babelrc
+
+    {
+        "presets": ["@babel/preset-env"],
+        "plugins": ["babel-plugin-istanbul"]
+    }
+
+运行 npm run coverage, okk (不用 test 了)
+```
+
 ## ava (在 mocha 的基础上支持 import 语法)
+
 npm install --save-dev ava
+
+> package.json
+```
+  "scripts": {
+    "test": "ava",
+    "coverage": "nyc ava"
+  },
+    "ava":{
+    "files": [
+      "test/*.js"
+    ],
+    "require": [
+      "@babel/register"
+    ],
+    "babel": {
+      "testOptions": {
+        "babelrc": true
+      }
+    }
+  }
+```
+
+
 ## jest

@@ -1,9 +1,10 @@
 {
   "all": true,
   "include": [
-    "dist/*.js"
+    "src/*.js"
   ],
   "exclude": [
     "**/*.spec.js"
-  ]
+  ],
+  "extends": "@istanbuljs/nyc-config-babel"
 }
