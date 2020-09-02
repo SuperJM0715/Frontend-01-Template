@@ -79,8 +79,8 @@ npm install --save-dev babel-loader @babel/core @babel/preset-env
 
 > 更改 nycrc 文件的路径  dist/*.js
 
-> 运行 npm run coverage
+> 运行 npm run coverage, okk
 
 ## ava (在 mocha 的基础上支持 import 语法)
-
+npm install --save-dev ava
 ## jest

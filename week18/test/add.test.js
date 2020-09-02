@@ -1,4 +1,4 @@
-var add = require('../src/add.js');
+var add = require('../dist/add.js');
 var assert = require('assert');
 
 // import {add} from "../src/add.js";
